@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
-//get 
+//get router method
+//get the task list from the database using SELECT query
+//if successful send task list as a response
+//if there's an error send 505 status code
 router.get("/todo", (req, res) => {
   console.log("in todo GET");
   const queryText = `SELECT * FROM "to_do_list";`;
@@ -19,7 +22,13 @@ router.get("/todo", (req, res) => {
     });
 });
 
-//post
+//post router method to add a new task on the client side
+//if statement is used for debugging purposes if any errors it will send 400 status code
+//create a querytext variable to store database data and values
+//values are using sanitization ($1, $2, $3)
+//execute the queryText 
+//if success it sends a status code of 204
+//if there's an error it'll send 505 status code as response
 
 router.post("/todo", (req, res) => {
   console.log("in post", req.body);
@@ -50,7 +59,8 @@ router.post("/todo", (req, res) => {
     });
 });
 
-//put router fo completed tasks
+//put router to update completed tasks using "/completed/:id" endpoint
+//
 router.put("/completed/:id", (req, res) => {
   const id = req.params.id;
   console.log("in put route");
