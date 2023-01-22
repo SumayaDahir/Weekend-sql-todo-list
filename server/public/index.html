@@ -4,12 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/server/vendors/jquery-3.6.2.min.js"></script>
-    <script src="/server/public/scripts/client.js"></script>
+    <script src="/vendors/jquery-3.6.2.min.js"></script>
+    <script src="/scripts/client.js"></script>
     <link rel="stylesheet" href="/styles/style.css">
     <title>To Do List</title>
 </head>
 <body>
+   <h1>Daily To Do List</h1> 
+   <label for="select-category"> Category: </label>
+   <select name="categories" id="todo-categories">
     
+    <option value="select-category"> -select category- </option>
+   <option value="Studies"> Studies</option>
+   <option value="Chores"> Work </option>
+   <option value="Shopping">Shopping</option>
+   <option value="Work">Chores </option>
+   <option value="appointments">Appointments</option>
+   <option value="health">Physical/Mental Health</option>
+    </select>
+    <label for="date"> Date: </label>
+    <input id="date" type="date" placeholder=" Date" > 
+    <label for="mytasks"> Priority: </label>
+    <input id="mytasks" type="text" placeholder=" New Task" >
+    <label for="Completed"> Completed: </label> 
+    <input id="Completed" type="text" placeholder="Completed" > 
+    <label for="mytasks"> Tomorrow: </label>
+    <input id="tmrw" type="text" placeholder="Add text" > 
+    <label for="notes"> Notes: </label>
+    <input id="notes" type="text" placeholder="Notes" > 
+    <label for="other-reminders"> Other Reminders: </label>
+    <input id="other-reminders" type="text" placeholder="Other" > 
+   <button id="add-task">Add</button>
+   
+   <div class="container">
+    <h2>To Do</h2>
+   <table>
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Priority</th>
+        <th>Tomorrow</th>
+        <th>Completed</th>
+        <th>Notes</th>
+        <th>Other Reminders</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+  </tbody>
+   </table>
+</div>
 </body>
 </html>
