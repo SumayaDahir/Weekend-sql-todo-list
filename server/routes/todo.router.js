@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
+//get 
 router.get("/todo", (req, res) => {
   console.log("in todo GET");
   const queryText = `SELECT * FROM "to_do_list";`;
@@ -48,6 +49,24 @@ router.post("/todo", (req, res) => {
       res.sendStatus(500);
     });
 });
+
+//put router fo completed tasks
+router.put("/completed/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("in put route");
+  const queryText = `UPDATE "to_do_list" SET "completed" = 'TRUE' WHERE "id" = $1`;
+  pool
+    .query(queryText, [id])
+    .then(() => {
+      console.log("success! you updated your task!", id);
+      res.sendStatus(204);
+    })
+    .catch((error) => {
+      console.log(`Error failed to update task`, error);
+      res.sendStatus(500);
+    });
+});
+
 
 //delete task from database
 router.delete("/:id", (req, res) => {

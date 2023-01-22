@@ -28,10 +28,9 @@ function appendDOM(lists) {
         <td> ${list.appointments ? "yes" : "no"} </td>
         <td> <button data-listid="${list.id}" class="delete-btn"> DELETE </button></td>
         <td> <button data-listid="${list.id}" class="${className}"> COMPLETE </button></td>
-
         </tr>`);
 
-        tableRow.data('id', list.id);
+        tableRow.data('listid', list.id);
         $('#todolist').append(tableRow);
   }
 }
@@ -97,9 +96,7 @@ function editTask(event) {
         .catch((error) => {
           console.log("check", error);
         });
-
-}
-
+};
 
 //delete task
 
