@@ -11,21 +11,10 @@
 </head>
 <body>
    <h1>Daily To Do List</h1> 
-   <label for="select-category"> Category: </label>
-   <select name="categories" id="todo-categories">
-    <!--
-    <option value="select-category"> -select category- </option>
-   <option value="Studies"> Studies</option>
-   <option value="Chores"> Work </option>
-   <option value="Shopping">Shopping</option>
-   <option value="Work">Chores </option>
-   <option value="appointments">Appointments</option>
-   <option value="health">Physical/Mental Health</option>
-    </select>-->
+    <label for="new_task"> Priority: </label>
+    <input id="new_task" type="text" placeholder=" New Task" >
     <label for="date"> Date: </label>
     <input id="date" type="date" placeholder=" Date" > 
-    <label for="mytasks"> Priority: </label>
-    <input id="priority" type="text" placeholder=" New Task" >
     <label for="Completed"> Completed: </label> 
     <input id="completed" type="text" placeholder="Completed"> 
     <label for="notes"> Notes: </label>
@@ -39,8 +28,8 @@
    <table>
     <thead>
     <tr>
-        <th>Date</th>
         <th>Priority</th>
+        <th>Date</th>
         <th>Tomorrow</th>
         <th>Completed</th>
         <th>Notes</th>

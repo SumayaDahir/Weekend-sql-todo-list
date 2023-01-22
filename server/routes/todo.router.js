@@ -22,29 +22,46 @@ router.get("/todo", (req, res) => {
 
 router.post("/todo", (req, res) => {
   console.log("in post", req.body);
+  const new_task = req.body.new_task;
   const date = req.body.date;
-  const priority = req.body.priority;
   const completed = req.body.completed;
   const notes = req.body.notes;
   const appointments = req.body.appointments;
 
-  if (!date || !priority || !completed || !notes || !appointments) {
+  if (!new_task || !date || !completed || !notes || !appointments) {
     const errorMessage = "error message";
     console.log(errorMessage);
     res.status(400).send(errorMessage);
   }
 
   const queryText = `
-    INSERT INTO "to_do_list" ("date", "priority", "completed", "notes", "appointments" )
+    INSERT INTO "to_do_list" ("new_task", "date" , "completed", "notes", "appointments" )
     VALUES ($1, $2, $3, $4, $5);`;
 
   pool
-    .query(queryText, [date, priority, completed, notes, appointments])
+    .query(queryText, [new_task, date, completed, notes, appointments])
     .then((response) => {
       res.sendStatus(201);
     })
     .catch((error) => {
       console.log(`error ${queryText}`, error);
+      res.sendStatus(500);
+    });
+});
+
+//delete task from database
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("in DELETE route");
+  const queryText = `DELETE FROM "to_do_list" WHERE "id" = $1;`;
+    pool
+    .query(queryText, [id])
+    .then(() => {
+      console.log("success! you removed your task!", id);
+      res.sendStatus(204);
+    })
+    .catch((error) => {
+      console.log(`Error deleting new task`, error);
       res.sendStatus(500);
     });
 });
