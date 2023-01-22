@@ -17,7 +17,9 @@ function appendDOM(lists) {
          <td> ${list.completed ? "yes" : "no"}</td>
         <td> ${list.notes}</td>
         <td> ${list.appointments ? "yes" : "no"} </td>
-        <td> <button data-id="${list.id}" class="delete-btn"> DELETE </button></td>
+        <td> <button data-id="${
+          list.id
+        }" class="delete-btn"> DELETE </button></td>
         </tr>`);
   }
 }
@@ -30,8 +32,40 @@ function getList() {
   }).then(function (response) {
     appendDOM(response);
   });
-};
+}
 
 //Post
 
+function newTask() {
+  console.log("in newTask");
+  //create new object
+  let newTask = {
+    date: $("#date").val(),
+    priority: $("#priority").val(),
+    completed: $("#completed").val(),
+    notes: $("#notes").val(),
+    appointments: $("#appointments").val(),
+  };
+  console.log(newTask);
+  //clear inputs
 
+  $("#date").val("");
+  $("#priority").val("");
+  $("#completed").val("");
+  $("#notes").val("");
+  $("#appointments").val("");
+
+  $.ajax({
+    method: "POST",
+    url: "todo/todo",
+    data: newTask,
+  })
+    .then(function (response) {
+      console.log("Response from server.", response);
+      getList();
+    })
+    .catch(function (error) {
+      console.log("Error in POST", error);
+      alert("Unable to add task at this time. Please try again later.");
+    });
+};
