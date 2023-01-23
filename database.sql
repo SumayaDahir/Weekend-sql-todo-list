@@ -8,5 +8,5 @@ CREATE TABLE "to_do_list" (
 );
 
 INSERT INTO "to_do_list" ("new_task", "date" , "completed", "notes", "appointments" )
-VALUES ('work', '01/21/2023', 'Yes', 'none', 'no')
+VALUES ('work', '01/21/2023', 'yes', 'none', 'no')
       
