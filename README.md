@@ -2,11 +2,11 @@
 
 ## Description
 
-### The To-Do App
+## The To-Do App
 
 You are going to create a 'TO DO' application. This type of application is very common to tackle when learning a new language, which makes it extremely valuable to work through for the first time. Chances are good that at some point in your career you will tackle this again while learning another language.
 
-### Here are the specific components for the challenge:
+## Here are the specific components for the challenge:
 
 - Create a front end experience that allows a user to create a Task.
 - When the Task is created, it should be stored inside of a database (SQL)
@@ -16,7 +16,7 @@ You are going to create a 'TO DO' application. This type of application is very 
 - Whether or not a Task is complete should also be stored in the database.
 - Deleting a Task should remove it both from the front end as well as the Database.
 
-## Styling
+### Styling
 
 Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
 
@@ -24,15 +24,15 @@ Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
 - font family and size
 - text color & or background color of tasks to show whether or not they     have been completed
 
-## Approach
+### Approach
 
 We would recommend you spend some time thinking about how to approach this problem. Think through all the logic that will be needed prior to writing any code. Take your time, relax, remember that impostor syndrome is real, and that you are capable of knocking this out of the park!
 
-## Create a Database
+### Create a Database
 
 Be sure to create a new database through Postico. Use the name weekend-to-do-app. You will need to use this name in your database connection configuration on your server.
 
-## Database Structure
+### Database Structure
 
 Please include a database.sql text file in your repo that includes all of your CREATE TABLE queries. This is so we can re-create your database while testing your app.
 

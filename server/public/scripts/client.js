@@ -20,15 +20,15 @@ function appendDOM(lists) {
     for (let i = 0; i < lists.length; i++) {
       let list = lists[i];
       console.log("in list", list);
+
       let className = '';
       if (list.completed) {
-        className = 'task-completed';
-        classNameRow = 'completed';
+        className = 'completed';
       } else if (!list.completed) {
         className = 'edit-btn';
       }
      let tableRow =  $("#todolist").append(`
-   <tr>
+   <tr class="${className}">
 
           <td> ${list.new_task} </td>
           <td> ${list.date} </td>
@@ -36,7 +36,7 @@ function appendDOM(lists) {
           <td> ${list.notes}</td>
           <td> ${list.appointments ? "yes" : "no"} </td>
           <td> <button data-listid="${list.id}" class="delete-btn"> DELETE </button></td>
-          <td class="${classNameRow}"> <button data-listid="${list.id}" class="${className}" >  ${list.completed ? 'COMPLETE' : 'INCOMPLETE'} </button></td>
+          <td> <button data-listid="${list.id}" class="${className}" >  ${list.completed ? 'COMPLETE' : 'INCOMPLETE'} </button></td>
           </tr>`);
   
           tableRow.data('listid', list.id);
@@ -65,7 +65,7 @@ function getList() {
 //if there are any errors display an error alert
 
 function newTask() {
-  console.log("in newTask");
+  console.log("in newTask"); 
   //create new object
   let newTask = {
     new_task: $("#new_task").val(),

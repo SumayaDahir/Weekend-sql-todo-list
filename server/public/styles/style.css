@@ -59,15 +59,19 @@ thead {
   margin-bottom: 20px;
 }
 
-.task-completed {
+.completed {
   font-weight: bold;
   color: rgb(45, 199, 255);
   background-color: white;
 }
 
-.task-completed:hover {
+.completed:hover {
   background-color: blueviolet;
   scale: 1.03;
+}
+
+tr.completed{
+    background-color: rgb(9, 9, 121, 0.7);
 }
 
 button {
