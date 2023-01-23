@@ -1,6 +1,6 @@
 CREATE TABLE "to_do_list" (
 "id" SERIAL PRIMARY KEY,
-"new_task" VARCHAR(250)
+"new_task" VARCHAR(250),
 "date" date,
 "completed" BOOLEAN, 
 "notes" TEXT,
