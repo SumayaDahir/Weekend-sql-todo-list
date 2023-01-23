@@ -1,3 +1,85 @@
 body {
-    background-color: blueviolet;
+  margin: 0;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    rgb(2, 0, 36, 0.7) 0%,
+    rgb(9, 9, 121, 0.7) 35%,
+    rgba(0, 212, 255, 0.7) 100%
+  );
+  background-position: cover;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  text-align: center;
+  border-radius: 25px;
+  padding: 2em;
+  width: 90%;
+  margin: auto;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+section {
+  background-color: rgb(144, 123, 234);
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+label {
+  padding: 0.3rem;
+  font-size: 20px;
+}
+input {
+  padding: 0.3rem;
+  font-size: 15px;
+  border: none;
+  background-color: white;
+  color: blueviolet;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+tbody {
+  text-align: center;
+}
+thead {
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.task-completed {
+  font-weight: bold;
+  color: rgb(45, 199, 255);
+  background-color: white;
+}
+
+.task-completed:hover {
+  background-color: blueviolet;
+  scale: 1.03;
+}
+
+button {
+  color: blueviolet;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+  background-color: blueviolet;
+  color: white;
 }

@@ -7,6 +7,7 @@ function readyNow() {
   $("#add-task").on("click", newTask);
   $("#todolist").on("click", ".delete-btn", deleteTask);
   $("#todolist").on("click", ".edit-btn", editTask);
+  
 }
 
 //function to append task list on the DOM
@@ -21,19 +22,21 @@ function appendDOM(lists) {
       console.log("in list", list);
       let className = '';
       if (list.completed) {
-        className = 'complete';
+        className = 'task-completed';
+        classNameRow = 'completed';
       } else if (!list.completed) {
         className = 'edit-btn';
       }
      let tableRow =  $("#todolist").append(`
    <tr>
+
           <td> ${list.new_task} </td>
           <td> ${list.date} </td>
            <td> ${list.completed ? "yes" : "no"}</td>
           <td> ${list.notes}</td>
           <td> ${list.appointments ? "yes" : "no"} </td>
           <td> <button data-listid="${list.id}" class="delete-btn"> DELETE </button></td>
-          <td> <button data-listid="${list.id}" class="${className}"> COMPLETE </button></td>
+          <td class="${classNameRow}"> <button data-listid="${list.id}" class="${className}" >  ${list.completed ? 'COMPLETE' : 'INCOMPLETE'} </button></td>
           </tr>`);
   
           tableRow.data('listid', list.id);
@@ -127,4 +130,3 @@ function deleteTask(event) {
 .then((res) => getList())
 .catch((err) => alert(err))
 };
-

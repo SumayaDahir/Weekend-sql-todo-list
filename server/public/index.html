@@ -10,7 +10,11 @@
     <title>To Do List</title>
 </head>
 <body>
+    <header>
    <h1>Daily To Do List</h1> 
+    </header>
+    <main>
+    <section>
     <label for="new_task"> Priority: </label>
     <input id="new_task" type="text" placeholder=" New Task" >
     <label for="date"> Date: </label>
@@ -22,18 +26,19 @@
     <label for="appointments"> Appointments: </label>
     <input id="appointments" type="text" placeholder="Appointments" > 
    <button id="add-task">Add</button>
-   
-   <div class="container">
+    </section>
+    <section>
+ 
     <h2>To Do</h2>
-   <table>
-    <thead>
+    <div class="container">
+   <table style="margin: auto; width: 80%">
+    <thead style="margin: auto; width: 80%">
     <tr>
         <th>Priority</th>
         <th>Date</th>
-        <th>Tomorrow</th>
         <th>Completed</th>
         <th>Notes</th>
-        <th>Other Reminders</th>
+        <th>Appointments</th>
         <th>Delete</th>
         <th>Mark Complete</th>
     </tr>
@@ -43,5 +48,7 @@
   </tbody>
    </table>
 </div>
+</section>
+</main>
 </body>
 </html>
